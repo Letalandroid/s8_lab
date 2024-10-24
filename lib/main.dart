@@ -41,10 +41,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> _loadDogs() async {
     final fido = Dog(id: 0, name: 'Fido', age: 35);
-    final jeremy = Dog(id: 1, name: 'Jeremy', age: 20);
     await insertDog(fido);
-    await insertDog(jeremy);
-    await updateDog(Dog(id: 0, name: 'Fido', age: 42));
+    await updateDog(Dog(id: 0, name: 'Fido', age: 16));
+    final TaoPai = Dog(id: 4, name: 'TaoPai', age: 98);
+    await insertDog(TaoPai);
+    await deleteDog(2);
+    await deleteDog(3);
 
     dogList = await dogs();
     print(dogList);
